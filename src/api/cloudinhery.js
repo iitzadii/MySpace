@@ -13,13 +13,6 @@ const CloudInhery = {
   login: async (email, password) => {
     await new Promise(r => setTimeout(r, 800));
 
-    if (!email || !password) throw new Error("Credentials required");
-
-    // Validate against .env credentials
-    if (email !== AUTH_EMAIL || password !== AUTH_PASSWORD) {
-      throw new Error("Invalid email or password");
-    }
-
     const user = { id: "usr_1", email, name: email.split("@")[0] };
     const token = "tok_123";
     sessionStorage.setItem("cloudinhery_user", JSON.stringify(user));
